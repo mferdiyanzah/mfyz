@@ -1,0 +1,80 @@
+.nav_link {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 0.2em;
+}
+
+.nav_link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-out;
+}
+
+.nav_link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav_logo {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 5px 10px;
+}
+
+.nav_logo::before {
+  transform: translateX(100%);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 99.5%;
+  height: 3px;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
+}
+
+.nav_logo::after {
+  transform: translateX(-100%);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99.5%;
+  height: 3px;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+
+.nav_logo:hover {
+  text-decoration: none;
+}
+
+.nav_logo:hover::before {
+  transition: 0.1s transform linear, 0.1s height linear 0.1s;
+  transform: translateX(0);
+  height: 100%;
+  border-color: black;
+}
+
+.nav_logo:hover::after {
+  transition: 0.1s transform linear 0.2s, 0.1s height linear 0.3s;
+  transform: translateX(0);
+  height: 100%;
+  border-color: black;
+}
+
+@media (max-width: 640px) {
+  .nav_link {
+    letter-spacing: normal;
+  }
+}
