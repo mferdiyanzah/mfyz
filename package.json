@@ -1,17 +1,20 @@
 {
   "name": "mfyz",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mferdiyanzah.github.io/mfyz",
+  "homepage": "https://mfyz.site",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "pnpm build && gh-pages -d dist"
+    "deploy": "pnpm build && gh-pages -d dist",
+    "pm2:start": "npm run build && pm2 start ecosystem.config.cjs",
+    "pm2:restart": "npm run build && pm2 restart ecosystem.config.cjs"
   },
   "dependencies": {
+    "express": "^4.21.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
