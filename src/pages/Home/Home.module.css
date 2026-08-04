@@ -13,7 +13,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: #c0562f;
   transform-origin: bottom right;
   transition: transform 0.2s ease-out;
 }

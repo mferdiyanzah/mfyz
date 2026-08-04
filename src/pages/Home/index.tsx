@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { FiGithub, FiLinkedin, FiMail, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import style from "./Home.module.css";
 import Projects from "../../components/Projects";
 import NavLinks from "../../components/NavLinks";
@@ -22,12 +22,10 @@ const Home: FC = () => {
 
   return (
     <div className="w-full relative min-h-screen flex flex-col">
-      <nav className="w-full right-0 z-50 bg-white/80 backdrop-blur-sm py-4 fixed top-0">
-        <div className="container mx-auto px-6 flex justify-between flex-row text-[16px] items-center">
-          <div
-            className={`font-bold text-[32px] md:text-[40px] ${style.nav_logo}`}
-          >
-            mfyz.
+      <nav className="w-full z-50 fixed top-0 bg-paper/90 backdrop-blur-md border-b border-ink/10">
+        <div className="container mx-auto px-6 flex justify-between flex-row text-[16px] items-center h-16">
+          <div className={`font-display font-semibold text-[22px] tracking-tight ${style.nav_logo}`}>
+            mfyz<em className="not-italic text-rust">.</em>
           </div>
 
           {/* Mobile Menu Button */}
@@ -39,14 +37,14 @@ const Home: FC = () => {
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-3 items-center sm:gap-8">
+          <div className="hidden md:flex gap-8 items-center">
             <NavLinks scrollToSection={scrollToSection} />
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm py-4 px-6">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-paper/95 backdrop-blur-md py-4 px-6 border-b border-ink/10">
             <div className="flex flex-col gap-4">
               <NavLinks scrollToSection={scrollToSection} />
             </div>
@@ -55,154 +53,160 @@ const Home: FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center gap-8 px-4 pt-20 md:pt-0">
-        <div className="flex justify-center w-full md:w-1/2 px-4 md:px-8">
-          <img
-            src="/main.png"
-            alt="main image"
-            className="w-auto max-w-full h-auto max-h-[400px] md:max-h-none"
-          />
-        </div>
-
-        <div className="w-full md:w-1/2 flex flex-col items-center px-4 md:px-8">
-          <div className="max-w-2xl">
-            <div className="font-bold text-3xl md:text-4xl text-center sm:my-2 my-6 tracking-wide">
-              Hallo, I&apos;m Ferdiyanzah
-            </div>
-            <div className="tracking-wide text-center text-sm md:text-base">
-              A software developer with years of experience. My expertise lies
-              in Web applications, and the main languages in my technology suite
-              are <span className="border-b-2 border-black">React</span>,{" "}
-              <span className="border-b-2 border-black">React Native</span>,{" "}
-              <span className="border-b-2 border-black">Python</span>, and{" "}
-              <span className="border-b-2 border-black">Java</span>. I have been
-              working with Web App and Mobile App for 3 years. I&apos;m a
-              lifelong learner, currently exploring{" "}
-              <span className="border-b-2 border-black">Golang</span>.
-            </div>
-            <div className="flex gap-6 justify-center my-4">
-              <a
-                href="mailto:mferdiyanzah@gmail.com"
-                className="hover:opacity-100 opacity-70"
-              >
-                <FiMail size="1.75em" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mferdiyanzah/"
-                className="hover:opacity-100 opacity-70"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FiLinkedin size="1.75em" />
-              </a>
-              <a
-                href="https://github.com/mferdiyanzah"
-                className="hover:opacity-100 opacity-70"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <FiGithub size="1.75em" />
-              </a>
-            </div>
+      <section className="min-h-screen w-full flex items-center pt-16">
+        <div className="container mx-auto px-6">
+          <div className="overline">Frontend Engineer — South Tangerang, ID</div>
+          <h1 className="font-display font-normal text-[clamp(52px,8vw,92px)] leading-[0.98] tracking-[-0.03em] my-2">
+            Hallo, I&apos;m
+            <br />
+            Mohammad <em className="text-rust">Ferdiyanzah</em>
+          </h1>
+          <p className="max-w-[560px] text-lg text-ink-soft mt-7">
+            I build web and mobile applications that people actually use. Three
+            years of <strong className="text-ink border-b-2 border-rust">React</strong>,{" "}
+            <strong className="text-ink border-b-2 border-rust">React Native</strong>,{" "}
+            <strong className="text-ink border-b-2 border-rust">Python</strong> and{" "}
+            <strong className="text-ink border-b-2 border-rust">Java</strong> — and right
+            now I&apos;m diving into{" "}
+            <strong className="text-ink border-b-2 border-rust">Golang</strong>.
+          </p>
+          <div className="flex gap-6 mt-11 flex-wrap">
+            <a
+              href="mailto:mferdiyanzah@gmail.com"
+              className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
+            >
+              Email me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mferdiyanzah/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/mferdiyanzah"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
+            >
+              GitHub
+            </a>
+          </div>
+          <div className="font-display italic text-ink-soft text-[15px] mt-4">
+            — currently an IT Management Trainee at Dexa Group
           </div>
         </div>
       </section>
 
-      {/* Experiences Section */}
-      <section
-        id="experiences"
-        className="min-h-screen flex items-center bg-gray-50 py-12 md:py-20"
-      >
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12">
-            Experiences
-          </h2>
-          My experiences has been a journey of learning and growth, from
-          interning to a full-time employee.
-          <div className="space-y-8 max-w-4xl mx-auto">
-            {/* Dexa Group */}
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    IT Management Trainee
-                  </h3>
-                  <p className="text-gray-600">Dexa Group</p>
-                </div>
-                <span className="text-gray-500 text-sm">
-                  February 2024 - Present
+      {/* Tech Stack Marquee */}
+      <section className="w-full bg-[#faf9f6] border-t border-b border-[rgba(28,26,23,0.12)] py-7 overflow-hidden">
+        <div className="marquee-track">
+          {["REACT", "REACT NATIVE", "PYTHON", "JAVA", "GOLANG", "TAILWIND CSS", "NEXT.JS", "NODE.JS", "MYSQL", "ORACLE", "MICRO FRONTEND", "DOCKER"]
+            .flatMap((t) => [t, t])
+            .reduce<JSX.Element[]>((acc, tech, i) => {
+              if (i > 0) acc.push(<span key={`d${i}`} className="text-[#c0562f] mx-4 text-[10px]">•</span>);
+              acc.push(
+                <span
+                  key={`t${i}`}
+                  className="whitespace-nowrap uppercase text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.18em] text-[#57534b]"
+                >
+                  {tech}
                 </span>
+              );
+              return acc;
+            }, [])}
+        </div>
+      </section>
+
+      {/* Experiences Section */}
+      <section id="experiences" className="bg-paper-alt py-28 md:py-32">
+        <div className="container mx-auto px-6">
+          <div className="overline">01 — Experience</div>
+          <h2 className="section-title">A journey of learning and growth.</h2>
+
+          <div className="mt-10 max-w-5xl">
+            {/* Dexa Group */}
+            <div className="grid grid-cols-12 gap-4 py-9 border-t border-ink/10">
+              <div className="col-span-12 md:col-span-3 font-display italic text-ink-soft text-[15px]">
+                Feb 2024 — Present
               </div>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>
-                  Assigned on iFocus Project, a website for the needs of
-                  Marketing and Sales team to boost the revenue of company and
-                  to get more clients
-                </li>
-                <li>
-                  Use MySQL and Oracle as a primary database of the project
-                </li>
-                <li>
-                  Being a pioneer of Micro Frontend Architecture in this company
-                </li>
-              </ul>
+              <div className="col-span-12 md:col-span-9">
+                <h3 className="font-display font-semibold text-[26px] tracking-tight">
+                  IT Management Trainee
+                </h3>
+                <p className="text-sm font-semibold text-rust mt-0.5 mb-3">
+                  Dexa Group
+                </p>
+                <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Building iFocus, a web platform that helps the Marketing and
+                    Sales teams win more clients.
+                  </li>
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Working with MySQL and Oracle as the project&apos;s primary
+                    databases.
+                  </li>
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Introduced Micro Frontend architecture to the company for the
+                    first time.
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Sinarmas Quantum Engine */}
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Junior Frontend Engineer
-                  </h3>
-                  <p className="text-gray-600">Sinarmas Quantum Engine</p>
-                </div>
-                <span className="text-gray-500 text-sm">
-                  March 2023 - January 2024
-                </span>
+            <div className="grid grid-cols-12 gap-4 py-9 border-t border-ink/10">
+              <div className="col-span-12 md:col-span-3 font-display italic text-ink-soft text-[15px]">
+                Mar 2023 — Jan 2024
               </div>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>
-                  Fostered effective collaboration with other Frontend
-                  Engineers, utilizing React.js and Tailwind CSS frameworks
-                </li>
-                <li>
-                  Leveraged WebSocket technology to create a dynamic Live Chat
-                  feature, enabling seamless communication between two entities
-                </li>
-                <li>
-                  Create Dashboard for HR and Business Team and also client to
-                  see and bill client's usage of our services
-                </li>
-                <li>Create Unit Testing to cover more than 90% of codebase</li>
-              </ul>
+              <div className="col-span-12 md:col-span-9">
+                <h3 className="font-display font-semibold text-[26px] tracking-tight">
+                  Junior Frontend Engineer
+                </h3>
+                <p className="text-sm font-semibold text-rust mt-0.5 mb-3">
+                  Sinarmas Quantum Engine
+                </p>
+                <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Built dashboards for HR, business teams, and clients using
+                    React.js and Tailwind CSS.
+                  </li>
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Created a live chat feature with WebSocket, connecting
+                    customers and support in real time.
+                  </li>
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Wrote unit tests covering more than 90% of the codebase.
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Danamas */}
-            <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-800">
-                    Frontend Engineer Internship
-                  </h3>
-                  <p className="text-gray-600">Danamas (Pasar Dana Pinjaman)</p>
-                </div>
-                <span className="text-gray-500 text-sm">
-                  September 2022 - February 2023
-                </span>
+            <div className="grid grid-cols-12 gap-4 py-9 border-t border-b border-ink/10">
+              <div className="col-span-12 md:col-span-3 font-display italic text-ink-soft text-[15px]">
+                Sep 2022 — Feb 2023
               </div>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>
-                  Successfully contributed to the development of a comprehensive
-                  BackOffice Website, catering to the management of loans,
-                  customers, and sales
-                </li>
-                <li>
-                  Demonstrated expertise in migrating a module from a monolithic
-                  system to a Micro Frontend architecture, optimizing
-                  scalability and maintainability
-                </li>
-              </ul>
+              <div className="col-span-12 md:col-span-9">
+                <h3 className="font-display font-semibold text-[26px] tracking-tight">
+                  Frontend Engineer Internship
+                </h3>
+                <p className="text-sm font-semibold text-rust mt-0.5 mb-3">
+                  Danamas — Pasar Dana Pinjaman
+                </p>
+                <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Built a back-office website that manages loans, customers,
+                    and sales.
+                  </li>
+                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
+                    Migrated a module from a monolith to Micro Frontend
+                    architecture.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -211,98 +215,91 @@ const Home: FC = () => {
       <Projects />
 
       {/* About Section */}
-      <section id="about" className="min-h-screen flex py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8">About</h2>
-          <p className="text-lg mb-4">
-            My journey as a software developer has been a fascinating one,
-            filled with countless challenges and opportunities for growth. I was
-            introduced with software engineering since 2015, when I was in 9th
-            grade. I started with C++ with my first project was a simple
-            guessing game. My family didn't have a computer at that time, so I
-            learned programming by doing it at internet cafe.
-          </p>
-          <p className="text-lg mb-4">
-            Because I was bored about school, I went to Vocational High School
-            and learned about Software Engineering. I learned mainly C++ and Web
-            Development.
-          </p>
-          <p className="text-lg mb-4">
-            After I graduated, I went to ITS (Institut Teknologi Sepuluh
-            Nopember) and studied Physics. Why? Because my grades didn't let me
-            to study Software Engineering at ITS. So, I studied Physics, and I
-            learned a lot of things that not related to software engineering.
-            But, I still keep learning about software engineering, and now I'm a
-            software engineer.
-          </p>
+      <section id="about" className="py-28 md:py-32">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-16">
+          <div>
+            <div className="overline">03 — About</div>
+            <h2 className="section-title">From internet cafes to engineering.</h2>
+            <p className="text-[19px] text-ink mt-8 mb-4">
+              I&apos;ve been hooked on software engineering since 2015, when I was
+              in 9th grade. My first project was a guessing game written in C++ —
+              at an internet cafe, because my family didn&apos;t have a computer.
+            </p>
+            <p className="text-ink-soft mb-4">
+              I went to a vocational high school to study Software Engineering.
+              Then I applied to ITS for the same major — but my grades sent me to
+              Physics instead. It turned out to be a gift: I learned to think
+              differently, and I never stopped coding.
+            </p>
+            <p className="text-ink-soft">
+              Today I&apos;m a software engineer who believes great products come
+              from curiosity and craft.
+            </p>
+          </div>
+          <div className="md:border-l border-ink/10 md:pl-8">
+            <h4 className="font-display italic text-rust text-[15px] mb-3">
+              Currently exploring
+            </h4>
+            <ul className="flex flex-wrap gap-2">
+              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
+                Golang
+              </li>
+              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
+                Micro Frontend
+              </li>
+              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
+                System Design
+              </li>
+              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
+                DevOps
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="flex items-center bg-gray-50">
-        <div className="container mx-auto px-4 py-20">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            Let's Connect!
-          </h2>
-
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-lg mb-8 text-gray-700">
-              I'm always open to discussing new projects, opportunities, or just
-              having a friendly chat about technology.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
-              <a
-                href="mailto:mferdiyanzah@gmail.com"
-                className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <FiMail size="2em" className="mb-3 text-gray-700" />
-                <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-sm text-gray-600">mferdiyanzah@gmail.com</p>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/mferdiyanzah/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <FiLinkedin size="2em" className="mb-3 text-gray-700" />
-                <h3 className="font-semibold mb-2">LinkedIn</h3>
-                <p className="text-sm text-gray-600">Connect with me</p>
-              </a>
-
-              <a
-                href="https://github.com/mferdiyanzah"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1"
-              >
-                <FiGithub size="2em" className="mb-3 text-gray-700" />
-                <h3 className="font-semibold mb-2">GitHub</h3>
-                <p className="text-sm text-gray-600">Check out my work</p>
-              </a>
-            </div>
-
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Location</h3>
-              <p className="text-gray-700">
-                South Tangerang, Banten, Indonesia
-              </p>
-              <p className="text-gray-700 mt-2">Phone: +62 882-2778-5167</p>
-            </div>
+      <section id="contact" className="bg-ink text-paper text-center py-28 md:py-32">
+        <div className="container mx-auto px-6">
+          <div className="overline">04 — Contact</div>
+          <h2 className="section-title text-paper">Let&apos;s connect!</h2>
+          <p className="text-paper/70 max-w-[440px] mx-auto mt-4 mb-10">
+            Open to new projects, opportunities, or just a friendly chat about
+            technology.
+          </p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a
+              href="mailto:mferdiyanzah@gmail.com"
+              className="text-sm font-medium border border-paper/30 rounded-full px-6 py-3 hover:bg-rust hover:border-rust transition-all"
+            >
+              ✉ mferdiyanzah@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mferdiyanzah/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-medium border border-paper/30 rounded-full px-6 py-3 hover:bg-rust hover:border-rust transition-all"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/mferdiyanzah"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-medium border border-paper/30 rounded-full px-6 py-3 hover:bg-rust hover:border-rust transition-all"
+            >
+              GitHub
+            </a>
+          </div>
+          <div className="mt-12 text-[13px] text-paper/50">
+            South Tangerang, Banten, Indonesia · +62 882-2778-5167
           </div>
         </div>
       </section>
 
-      {/* Separate Footer Section */}
-      <footer className="w-full bg-gray-50 py-4">
-        <div className="container mx-auto px-4">
-          <div className="text-center text-gray-600">
-            &copy; {new Date().getFullYear()} Mohammad Ferdiyanzah. All rights
-            reserved.
-          </div>
-        </div>
+      {/* Footer */}
+      <footer className="py-7 text-center text-[13px] text-ink-soft border-t border-ink/10">
+        © {new Date().getFullYear()} Mohammad Ferdiyanzah. All rights reserved.
       </footer>
     </div>
   );

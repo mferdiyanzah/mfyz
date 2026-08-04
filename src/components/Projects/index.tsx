@@ -4,57 +4,52 @@ const projectsData = [
   {
     title: "Back Office of Danamas",
     description:
-      "Led the development of a sophisticated micro-frontend platform that streamlined operations for Back Office teams, resulting in a 40% increase in task management efficiency.",
-    technologies: ["AngularJS", "SCSS", "Webpack", "Micro Frontend"],
+      "Micro-frontend platform that made back-office operations 40% more efficient.",
+    technologies: ["AngularJS", "SCSS", "Webpack", "Micro FE"],
   },
   {
     title: "SQE Portal",
     description:
-      "Engineered a dynamic service monitoring dashboard that provides real-time analytics and billing insights, enabling business managers to make data-driven decisions.",
+      "Real-time monitoring dashboard with analytics and billing insights for business managers.",
     technologies: ["React.js", "Tailwind", "AntD", "Recharts"],
   },
   {
     title: "iFocus NG",
     description:
-      "Revolutionized sales automation at Dexa Group by implementing a scalable micro-frontend architecture, reducing deployment time by 60% while enhancing maintainability.",
-    technologies: ["React", "NodeJS", "Micro Frontend"],
+      "Scalable micro-frontend architecture that cut deployment time by 60%.",
+    technologies: ["React", "NodeJS", "Micro FE"],
   },
   {
     title: "Dining Hall Portal",
     description:
-      "Designed an intuitive mobile ordering system that serves 800+ employees daily, featuring real-time order tracking and a seamless checkout experience.",
-    technologies: ["React Native", "Mobile Development"],
+      "Mobile ordering system used by 800+ employees daily, with live order tracking.",
+    technologies: ["React Native", "Mobile"],
   },
   {
     title: "Treasury Management System",
     description:
-      "Spearheaded Dexa Group's first NextJS implementation, creating a comprehensive financial management platform that handles millions in assets with enhanced security.",
-    technologies: ["NextJS", "Full Stack", "Financial Tech"],
+      "Dexa Group's first NextJS project — a financial platform handling millions in assets.",
+    technologies: ["NextJS", "Full Stack", "FinTech"],
   },
   {
     title: "Laboratory Management System",
     description:
-      "Built a modern academic platform that transformed laboratory operations, serving 300+ students with automated scheduling, grading, and resource management.",
-    technologies: ["Next.js", "Bootstrap", "Prisma", "Supabase"],
+      "Academic platform serving 300+ students with scheduling, grading, and resources.",
+    technologies: ["Next.js", "Prisma", "Supabase"],
   },
 ];
 
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center py-20 bg-gray-50"
-    >
+    <section id="projects" className="py-28 md:py-32">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-4 tracking-wide">Projects</h2>
-        <p className="text-gray-600 mb-12 text-lg tracking-wide max-w-3xl">
-          Here's a showcase of my key projects, demonstrating my expertise in
-          building scalable and user-centric solutions.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="overline">02 — Selected Work</div>
+        <h2 className="section-title">Things I&apos;ve built.</h2>
+        <div className="mt-10 border-b border-ink/10">
           {projectsData.map((project, index) => (
             <ProjectCard
               key={index}
+              index={index + 1}
               title={project.title}
               description={project.description}
               technologies={project.technologies}

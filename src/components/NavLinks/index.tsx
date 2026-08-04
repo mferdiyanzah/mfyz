@@ -7,28 +7,28 @@ const NavLinks = ({
 }) => (
   <>
     <div
-      className={`${style.nav_link} cursor-pointer hover:text-gray-600`}
+      className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("experiences")}
     >
-      experiences
+      Experience
     </div>
     <div
-      className={`${style.nav_link} cursor-pointer hover:text-gray-600`}
+      className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("projects")}
     >
-      projects
+      Work
     </div>
     <div
-      className={`${style.nav_link} cursor-pointer hover:text-gray-600`}
+      className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("about")}
     >
-      about
+      About
     </div>
     <div
-      className={`${style.nav_link} cursor-pointer hover:text-gray-600`}
+      className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("contact")}
     >
-      contact
+      Contact
     </div>
   </>
 );
