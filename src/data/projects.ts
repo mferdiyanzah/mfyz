@@ -50,22 +50,4 @@ export const projectsData: Project[] = [
       "Mobile ordering system used by 800+ employees daily, with live order tracking and kitchen queue management.",
     technologies: ["React Native", "Mobile"],
   },
-  {
-    title: "Homelab & Automation",
-    description:
-      "26 self-hosted Docker services at home — including an Obsidian LiveSync setup (CouchDB + E2E) that keeps notes in sync across three devices, and automated stock alerts running twice daily.",
-    technologies: ["Docker", "CouchDB", "Python", "Systemd"],
-  },
-  {
-    title: "Stock Analysis Pipeline",
-    description:
-      "Automated IDX trading pipeline: price alerts on 13+ tickers, candidate screening, and weekly chart reports — all cron-driven, no babysitting.",
-    technologies: ["Python", "yfinance", "Cron", "Matplotlib"],
-  },
-  {
-    title: "This Portfolio",
-    description:
-      "The site you're reading — React + Vite + TypeScript, deployed through a Cloudflare tunnel with zero-downtime PM2 restarts.",
-    technologies: ["React", "Vite", "TypeScript", "PM2"],
-  },
 ];
