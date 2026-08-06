@@ -1,43 +1,5 @@
 import ProjectCard from "../ProjectCard";
-
-const projectsData = [
-  {
-    title: "Back Office of Danamas",
-    description:
-      "Micro-frontend platform that made back-office operations 40% more efficient.",
-    technologies: ["AngularJS", "SCSS", "Webpack", "Micro FE"],
-  },
-  {
-    title: "SQE Portal",
-    description:
-      "Real-time monitoring dashboard with analytics and billing insights for business managers.",
-    technologies: ["React.js", "Tailwind", "AntD", "Recharts"],
-  },
-  {
-    title: "iFocus NG",
-    description:
-      "Scalable micro-frontend architecture that cut deployment time by 60%.",
-    technologies: ["React", "NodeJS", "Micro FE"],
-  },
-  {
-    title: "Dining Hall Portal",
-    description:
-      "Mobile ordering system used by 800+ employees daily, with live order tracking.",
-    technologies: ["React Native", "Mobile"],
-  },
-  {
-    title: "Treasury Management System",
-    description:
-      "Dexa Group's first NextJS project — a financial platform handling millions in assets.",
-    technologies: ["NextJS", "Full Stack", "FinTech"],
-  },
-  {
-    title: "Laboratory Management System",
-    description:
-      "Academic platform serving 300+ students with scheduling, grading, and resources.",
-    technologies: ["Next.js", "Prisma", "Supabase"],
-  },
-];
+import { projectsData } from "../../data/projects";
 
 function Projects() {
   return (
