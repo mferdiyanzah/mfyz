@@ -55,7 +55,7 @@ const Home: FC = () => {
       {/* Hero Section */}
       <section className="min-h-screen w-full flex items-center pt-16">
         <div className="container mx-auto px-6">
-          <div className="overline">Frontend Engineer — South Tangerang, ID</div>
+          <div className="overline">Software Engineer — South Tangerang, ID</div>
           <h1 className="font-display font-normal text-[clamp(52px,8vw,92px)] leading-[0.98] tracking-[-0.03em] my-2">
             Hallo, I&apos;m
             <br />
