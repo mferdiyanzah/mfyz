@@ -11,13 +11,13 @@ export const projectsData: Project[] = [
   {
     title: "Wagmi — WhatsApp Customer-Service Platform",
     description:
-      "Production backend (TS/Fastify/Prisma) powering automated WhatsApp CS for hundreds of thousands of conversations — webhooks, queues, and live dashboards.",
+      "Production backend (TS/Fastify/Prisma) powering automated WhatsApp customer service — webhooks, queues, and live dashboards for the operations team.",
     technologies: ["TypeScript", "Fastify", "Prisma", "WebSocket"],
   },
   {
     title: "iFocus NG",
     description:
-      "Scalable micro-frontend architecture at Dexa Group that cut deployment time by 60% and keeps eight product teams shipping independently.",
+      "Micro-frontend architecture at Dexa Group that cut deployment time by 60% and keeps multiple product teams shipping independently.",
     technologies: ["React", "NodeJS", "Micro FE"],
   },
   {

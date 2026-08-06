@@ -150,7 +150,7 @@ const Home: FC = () => {
                   </li>
                   <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
                     Introduced Micro Frontend architecture to the company for the
-                    first time.
+                    first time — cutting deployment time by 60%.
                   </li>
                 </ul>
               </div>
@@ -199,7 +199,7 @@ const Home: FC = () => {
                 <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
                   <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
                     Built a back-office website that manages loans, customers,
-                    and sales.
+                    and sales — making operations 40% more efficient.
                   </li>
                   <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
                     Migrated a module from a monolith to Micro Frontend
