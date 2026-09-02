@@ -9,10 +9,10 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: "Enterprise Customer-Service Platform",
+    title: "Conversational Support Platform",
     description:
-      "Production backend powering automated WhatsApp customer service — webhooks, queues, and live dashboards for the operations team.",
-    technologies: ["TypeScript", "Fastify", "Prisma", "WebSocket"],
+      "Production backend for a WhatsApp-based customer-support operation, connecting inbound messaging, AI-assisted replies, human handoff, agent assignment, and real-time operations dashboards.",
+    technologies: ["TypeScript", "Fastify", "Prisma", "Redis", "BullMQ", "Socket.IO"],
   },
   {
     title: "Sales & Marketing Platform",
