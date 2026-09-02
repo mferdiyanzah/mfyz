@@ -11,8 +11,8 @@ export const projectsData: Project[] = [
   {
     title: "Conversational Support Platform",
     description:
-      "Production backend for a WhatsApp-based customer-support operation, connecting inbound messaging, AI-assisted replies, human handoff, agent assignment, and real-time operations dashboards.",
-    technologies: ["TypeScript", "Fastify", "Prisma", "Redis", "BullMQ", "Socket.IO"],
+      "Production backend for a WhatsApp-based customer-support operation, combining multi-provider AI conversations, knowledge-grounded responses, web search, human handoff, agent assignment, and real-time operations dashboards.",
+    technologies: ["TypeScript", "Fastify", "Prisma", "LangChain", "RAG", "Redis", "BullMQ", "Socket.IO"],
   },
   {
     title: "Sales & Marketing Platform",
