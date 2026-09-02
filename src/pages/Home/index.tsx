@@ -141,7 +141,7 @@ const Home: FC = () => {
                 </p>
                 <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
                   <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Building iFocus, a web platform that helps the Marketing and
+                    Building a web platform that helps the Marketing and
                     Sales teams win more clients.
                   </li>
                   <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
