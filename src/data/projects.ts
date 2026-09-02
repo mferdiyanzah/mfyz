@@ -15,9 +15,9 @@ export const projectsData: Project[] = [
     technologies: ["TypeScript", "Fastify", "Prisma", "WebSocket"],
   },
   {
-    title: "Enterprise Micro-Frontend Platform",
+    title: "Sales & Marketing Platform",
     description:
-      "Micro-frontend architecture for a large enterprise that cut deployment time by 60% and keeps multiple product teams shipping independently.",
+      "Sales and marketing platform built with micro-frontend architecture — cutting deployment time by 60% and enabling multiple product teams to ship independently.",
     technologies: ["React", "NodeJS", "Micro FE"],
   },
   {
