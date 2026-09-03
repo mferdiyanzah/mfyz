@@ -11,43 +11,43 @@ export const projectsData: Project[] = [
   {
     title: "Conversational Support Platform",
     description:
-      "Production backend for a WhatsApp-based customer-support operation, combining multi-provider AI conversations, knowledge-grounded responses, web search, human handoff, agent assignment, and real-time operations dashboards.",
+      "Client needed a WhatsApp-based support system that could handle AI conversations with human fallback. Built a production backend combining multi-provider AI routing, RAG-powered knowledge grounding, web search, and real-time dashboards for agent assignment and handoff.",
     technologies: ["TypeScript", "Fastify", "Prisma", "LangChain", "RAG", "Redis", "BullMQ", "Socket.IO"],
   },
   {
     title: "Sales & Marketing Platform",
     description:
-      "Sales and marketing platform built with micro-frontend architecture — cutting deployment time by 60% and enabling multiple product teams to ship independently.",
+      "Multiple product teams shared a single deployment pipeline. Introduced micro-frontend architecture that cut deployment time by 60% and let teams ship independently.",
     technologies: ["React", "NodeJS", "Micro FE"],
   },
   {
     title: "Financial Operations Platform",
     description:
-      "A full-stack financial platform built with Next.js, designed to support high-value asset operations and internal workflows.",
+      "Financial services team needed a modern full-stack platform to manage high-value asset workflows. Built with Next.js to support complex internal operations.",
     technologies: ["NextJS", "Full Stack", "FinTech"],
   },
   {
     title: "Financing Operations Platform",
     description:
-      "Micro-frontend platform that made back-office operations 40% more efficient for a national financial-services company.",
+      "Migrated a back-office module to micro-frontend architecture, making operations 40% more efficient for a national financial-services company.",
     technologies: ["AngularJS", "SCSS", "Webpack", "Micro FE"],
   },
   {
     title: "Real-Time Operations Dashboard",
     description:
-      "Real-time monitoring dashboard with analytics and billing insights — the numbers business managers check every morning.",
+      "Business managers needed daily visibility into operations and billing. Built a real-time monitoring dashboard with live analytics, billing insights, and exportable reports — the numbers they check every morning.",
     technologies: ["React.js", "Tailwind", "AntD", "Recharts"],
   },
   {
     title: "Academic Laboratory Platform",
     description:
-      "Academic platform serving 300+ students with scheduling, grading, and resources — my first full-stack Prisma project.",
+      "Built a unified full-stack platform for 300+ students to manage scheduling, grading, and lab resources.",
     technologies: ["Next.js", "Prisma", "Supabase"],
   },
   {
     title: "Employee Dining & Ordering Platform",
     description:
-      "Mobile ordering system used by 800+ employees daily, with live order tracking and kitchen queue management.",
+      "Built a mobile ordering system with live order tracking and kitchen queue management, serving 800+ employees daily.",
     technologies: ["React Native", "Mobile"],
   },
 ];

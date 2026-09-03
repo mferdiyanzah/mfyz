@@ -55,27 +55,28 @@ const Home: FC = () => {
       {/* Hero Section */}
       <section className="min-h-screen w-full flex items-center pt-16">
         <div className="container mx-auto px-6">
-          <div className="overline">Software Engineer — South Tangerang, ID</div>
+          <div className="overline">Software Engineer · Available for Freelance</div>
           <h1 className="font-display font-normal text-[clamp(52px,8vw,92px)] leading-[0.98] tracking-[-0.03em] my-2">
-            Hallo, I&apos;m
+            Hi, I&apos;m
             <br />
             Mohammad <em className="text-rust">Ferdiyanzah</em>
           </h1>
           <p className="max-w-[560px] text-lg text-ink-soft mt-7">
-            I build web and mobile applications that people actually use. Three
-            years of <strong className="text-ink border-b-2 border-rust">React</strong>,{" "}
+            I help companies ship production web and mobile apps — from internal
+            dashboards to customer-facing platforms. Specializing in{" "}
+            <strong className="text-ink border-b-2 border-rust">React</strong>,{" "}
             <strong className="text-ink border-b-2 border-rust">React Native</strong>,{" "}
-            <strong className="text-ink border-b-2 border-rust">Python</strong> and{" "}
-            <strong className="text-ink border-b-2 border-rust">Java</strong> — and right
-            now I&apos;m diving into{" "}
-            <strong className="text-ink border-b-2 border-rust">Golang</strong>.
+            <strong className="text-ink border-b-2 border-rust">Python</strong>, and{" "}
+            <strong className="text-ink border-b-2 border-rust">TypeScript</strong>. Currently
+            expanding into{" "}
+            <strong className="text-ink border-b-2 border-rust">Golang</strong> for backend systems.
           </p>
           <div className="flex gap-6 mt-11 flex-wrap">
             <a
               href="mailto:mferdiyanzah@gmail.com"
               className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
             >
-              Email me
+              Let&apos;s Talk
             </a>
             <a
               href="https://www.linkedin.com/in/mferdiyanzah/"
@@ -103,7 +104,7 @@ const Home: FC = () => {
       {/* Tech Stack Marquee */}
       <section className="w-full bg-[#faf9f6] border-t border-b border-[rgba(28,26,23,0.12)] py-7 overflow-hidden">
         <div className="marquee-track">
-          {["REACT", "REACT NATIVE", "PYTHON", "JAVA", "GOLANG", "TAILWIND CSS", "NEXT.JS", "NODE.JS", "MYSQL", "ORACLE", "MICRO FRONTEND", "DOCKER"]
+          {["REACT", "REACT NATIVE", "PYTHON", "JAVA", "GOLANG", "TYPESCRIPT", "NEXT.JS", "NODE.JS", "MYSQL", "POSTGRESQL", "MICRO FRONTEND", "DOCKER"]
             .flatMap((t) => [t, t])
             .reduce<JSX.Element[]>((acc, tech, i) => {
               if (i > 0) acc.push(<span key={`d${i}`} className="text-[#c0562f] mx-4 text-[10px]">•</span>);
@@ -117,6 +118,37 @@ const Home: FC = () => {
               );
               return acc;
             }, [])}
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-28 md:py-32">
+        <div className="container mx-auto px-6">
+          <div className="overline">Services</div>
+          <h2 className="section-title">What I can help you build.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="border-t border-ink/10 pt-6">
+              <h3 className="font-display font-medium text-xl mb-2">Web Applications</h3>
+              <p className="text-ink-soft text-[15px]">
+                Full-stack React and Next.js apps — dashboards, internal tools,
+                SaaS products, and customer-facing platforms.
+              </p>
+            </div>
+            <div className="border-t border-ink/10 pt-6">
+              <h3 className="font-display font-medium text-xl mb-2">Mobile Apps</h3>
+              <p className="text-ink-soft text-[15px]">
+                Cross-platform React Native development — from prototype to
+                production-ready apps with real-time features.
+              </p>
+            </div>
+            <div className="border-t border-ink/10 pt-6">
+              <h3 className="font-display font-medium text-xl mb-2">APIs & Integrations</h3>
+              <p className="text-ink-soft text-[15px]">
+                Backend services, third-party integrations, and micro-frontend
+                architectures that scale with your team.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -258,14 +290,34 @@ const Home: FC = () => {
         </div>
       </section>
 
+      {/* Availability CTA */}
+      <section className="bg-paper-alt py-20 md:py-24">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="font-display font-medium text-[clamp(28px,4vw,40px)] tracking-tight">
+            Available for freelance projects
+          </h2>
+          <p className="text-ink-soft max-w-[480px] mx-auto mt-4 mb-8">
+            I take on a limited number of projects each quarter to ensure
+            quality. If you need a reliable engineer for your web or mobile
+            build, let&apos;s talk.
+          </p>
+          <a
+            href="mailto:mferdiyanzah@gmail.com"
+            className="text-sm font-medium tracking-[0.06em] uppercase bg-rust text-paper rounded-full px-7 py-3.5 hover:bg-ink transition-all"
+          >
+            Start a Conversation
+          </a>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="bg-ink text-paper text-center py-28 md:py-32">
         <div className="container mx-auto px-6">
           <div className="overline">04 — Contact</div>
-          <h2 className="section-title text-paper">Let&apos;s connect!</h2>
+          <h2 className="section-title text-paper">Let&apos;s build something.</h2>
           <p className="text-paper/70 max-w-[440px] mx-auto mt-4 mb-10">
-            Open to new projects, opportunities, or just a friendly chat about
-            technology.
+            Tell me about your project — timeline, goals, and budget.
+            I&apos;ll get back within 24 hours with a clear plan.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
@@ -292,7 +344,7 @@ const Home: FC = () => {
             </a>
           </div>
           <div className="mt-12 text-[13px] text-paper/50">
-            South Tangerang, Banten, Indonesia · +62 882-2778-5167
+            South Tangerang, Banten, Indonesia · UTC+7
           </div>
         </div>
       </section>
