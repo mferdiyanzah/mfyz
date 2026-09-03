@@ -6,30 +6,34 @@ const NavLinks = ({
   scrollToSection: (id: string) => void;
 }) => (
   <>
-    <div
+    <button
+      type="button"
       className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("experiences")}
     >
       Experience
-    </div>
-    <div
+    </button>
+    <button
+      type="button"
       className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("projects")}
     >
       Work
-    </div>
-    <div
+    </button>
+    <button
+      type="button"
       className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("about")}
     >
       About
-    </div>
-    <div
+    </button>
+    <button
+      type="button"
       className={`${style.nav_link} cursor-pointer hover:text-rust text-ink-soft text-sm font-medium`}
       onClick={() => scrollToSection("contact")}
     >
       Contact
-    </div>
+    </button>
   </>
 );
 
