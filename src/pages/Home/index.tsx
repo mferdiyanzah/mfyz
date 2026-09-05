@@ -4,355 +4,57 @@ import style from "./Home.module.css";
 import Projects from "../../components/Projects";
 import NavLinks from "../../components/NavLinks";
 
+const technologies = ["REACT", "REACT NATIVE", "PYTHON", "JAVA", "GOLANG", "TYPESCRIPT", "NEXT.JS", "NODE.JS", "MYSQL", "POSTGRESQL", "MICRO FRONTEND", "DOCKER"];
+
 const Home: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    const offset = 80;
-    const elementPosition = element?.getBoundingClientRect().top ?? 0;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
   return (
-    <div className="w-full relative min-h-screen flex flex-col">
-      <nav className="w-full z-50 fixed top-0 bg-paper/90 backdrop-blur-md border-b border-ink/10">
-        <div className="container mx-auto px-6 flex justify-between flex-row text-[16px] items-center h-16">
-          <div className={`font-display font-semibold text-[22px] tracking-tight ${style.nav_logo}`}>
-            mfyz<em className="not-italic text-rust">.</em>
-          </div>
+    <div className={style.page}>
+      <div className={style.wrap}>
+        <header className={style.header}>
+          <a className={style.logo} href="#top" aria-label="MFYZ home">mfyz<span>.</span></a>
+          <nav className={style.desktopNav} aria-label="Primary navigation"><NavLinks scrollToSection={scrollToSection} /><a className={style.navCta} href="mailto:mferdiyanzah@gmail.com">Let&apos;s talk <span aria-hidden="true">↗</span></a></nav>
+          <button className={style.menuButton} type="button" aria-expanded={isMenuOpen} aria-controls="mobile-navigation" aria-label={isMenuOpen ? "Close navigation" : "Open navigation"} onClick={() => setIsMenuOpen((open) => !open)}>{isMenuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}</button>
+          {isMenuOpen && <nav id="mobile-navigation" className={style.mobileNav} aria-label="Mobile navigation"><NavLinks scrollToSection={scrollToSection} /><a className={style.navCta} href="mailto:mferdiyanzah@gmail.com">Let&apos;s talk <span aria-hidden="true">↗</span></a></nav>}
+        </header>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <FiX size="24px" /> : <FiMenu size="24px" />}
-          </button>
+        <main id="top">
+          <section className={style.hero} aria-labelledby="hero-title">
+            <div className={style.eyebrow}>Software Engineer · Available for freelance</div>
+            <h1 id="hero-title">I make <span className={style.pink}>complex</span> things feel <span className={style.blue}>simple.</span></h1>
+            <p className={style.intro}>Mohammad Ferdiyanzah builds production web and mobile software for teams that want to move from messy workflow to useful product.</p>
+            <div className={style.actions}><a className={style.button} href="mailto:mferdiyanzah@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a><button className={`${style.button} ${style.buttonAlt}`} type="button" onClick={() => scrollToSection("projects")}>See the work <span aria-hidden="true">↓</span></button></div>
+            <p className={style.currentRole}>Currently an IT Management Trainee at Dexa Group.</p>
+          </section>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8 items-center">
-            <NavLinks scrollToSection={scrollToSection} />
-          </div>
-        </div>
+          <div className={style.strip} aria-label="Technologies and specialties"><div className={style.stripTrack}>{[...technologies, ...technologies].map((technology, index) => <span key={`${technology}-${index}`}>{technology} <b aria-hidden="true">✳</b></span>)}</div></div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-paper/95 backdrop-blur-md py-4 px-6 border-b border-ink/10">
-            <div className="flex flex-col gap-4">
-              <NavLinks scrollToSection={scrollToSection} />
-            </div>
-          </div>
-        )}
-      </nav>
+          <section className={style.section} aria-labelledby="services-title"><div className={style.label}>What I bring</div><h2 id="services-title">Less noise.<br />More shipped.</h2><div className={style.services}>
+            <article className={style.service}><h3>Web applications</h3><p>Full-stack React and Next.js apps — dashboards, internal tools, SaaS products, and customer-facing platforms.</p></article>
+            <article className={style.service}><h3>Mobile products</h3><p>Cross-platform React Native development — from prototype to production-ready apps with real-time features.</p></article>
+            <article className={style.service}><h3>APIs &amp; integrations</h3><p>Backend services, third-party integrations, and micro-frontend architectures that scale with your team.</p></article>
+          </div></section>
 
-      {/* Hero Section */}
-      <section className="min-h-screen w-full flex items-center pt-16">
-        <div className="container mx-auto px-6">
-          <div className="overline">Software Engineer · Available for Freelance</div>
-          <h1 className="font-display font-normal text-[clamp(52px,8vw,92px)] leading-[0.98] tracking-[-0.03em] my-2">
-            Hi, I&apos;m
-            <br />
-            Mohammad <em className="text-rust">Ferdiyanzah</em>
-          </h1>
-          <p className="max-w-[560px] text-lg text-ink-soft mt-7">
-            I help companies ship production web and mobile apps — from internal
-            dashboards to customer-facing platforms. Specializing in{" "}
-            <strong className="text-ink border-b-2 border-rust">React</strong>,{" "}
-            <strong className="text-ink border-b-2 border-rust">React Native</strong>,{" "}
-            <strong className="text-ink border-b-2 border-rust">Python</strong>, and{" "}
-            <strong className="text-ink border-b-2 border-rust">TypeScript</strong>. Currently
-            expanding into{" "}
-            <strong className="text-ink border-b-2 border-rust">Golang</strong> for backend systems.
-          </p>
-          <div className="flex gap-6 mt-11 flex-wrap">
-            <a
-              href="mailto:mferdiyanzah@gmail.com"
-              className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
-            >
-              Let&apos;s Talk
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mferdiyanzah/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/mferdiyanzah"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-sm font-medium tracking-[0.06em] uppercase border border-ink/10 rounded-full px-5 py-3 hover:border-rust hover:text-rust transition-all"
-            >
-              GitHub
-            </a>
-          </div>
-          <div className="font-display italic text-ink-soft text-[15px] mt-4">
-            — currently an IT Management Trainee at Dexa Group
-          </div>
-        </div>
-      </section>
+          <Projects />
 
-      {/* Tech Stack Marquee */}
-      <section className="w-full bg-[#faf9f6] border-t border-b border-[rgba(28,26,23,0.12)] py-7 overflow-hidden">
-        <div className="marquee-track">
-          {["REACT", "REACT NATIVE", "PYTHON", "JAVA", "GOLANG", "TYPESCRIPT", "NEXT.JS", "NODE.JS", "MYSQL", "POSTGRESQL", "MICRO FRONTEND", "DOCKER"]
-            .flatMap((t) => [t, t])
-            .reduce<JSX.Element[]>((acc, tech, i) => {
-              if (i > 0) acc.push(<span key={`d${i}`} className="text-[#c0562f] mx-4 text-[10px]">•</span>);
-              acc.push(
-                <span
-                  key={`t${i}`}
-                  className="whitespace-nowrap uppercase text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.18em] text-[#57534b]"
-                >
-                  {tech}
-                </span>
-              );
-              return acc;
-            }, [])}
-        </div>
-      </section>
+          <section id="experiences" className={`${style.section} ${style.experience}`} aria-labelledby="experience-title"><div className={style.label}>Experience</div><h2 id="experience-title">Where I&apos;ve<br />learned to ship.</h2><div className={style.experienceList}>
+            <article className={style.experienceItem}><time>Feb 2024 — Present</time><div><h3>IT Management Trainee · Dexa Group</h3><ul><li>Building a web platform that helps the Marketing and Sales teams win more clients.</li><li>Working with MySQL and Oracle as the project&apos;s primary databases.</li><li>Introduced Micro Frontend architecture to the company for the first time — cutting deployment time by 60%.</li></ul></div></article>
+            <article className={style.experienceItem}><time>Mar 2023 — Jan 2024</time><div><h3>Junior Frontend Engineer · Sinarmas Quantum Engine</h3><ul><li>Built dashboards for HR, business teams, and clients using React.js and Tailwind CSS.</li><li>Created a live chat feature with WebSocket, connecting customers and support in real time.</li><li>Wrote unit tests covering more than 90% of the codebase.</li></ul></div></article>
+            <article className={style.experienceItem}><time>Sep 2022 — Feb 2023</time><div><h3>Frontend Engineer Internship · Danamas — Pasar Dana Pinjaman</h3><ul><li>Built a back-office website that manages loans, customers, and sales — making operations 40% more efficient.</li><li>Migrated a module from a monolith to Micro Frontend architecture.</li></ul></div></article>
+          </div></section>
 
-      {/* Services Section */}
-      <section className="py-28 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="overline">Services</div>
-          <h2 className="section-title">What I can help you build.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="border-t border-ink/10 pt-6">
-              <h3 className="font-display font-medium text-xl mb-2">Web Applications</h3>
-              <p className="text-ink-soft text-[15px]">
-                Full-stack React and Next.js apps — dashboards, internal tools,
-                SaaS products, and customer-facing platforms.
-              </p>
-            </div>
-            <div className="border-t border-ink/10 pt-6">
-              <h3 className="font-display font-medium text-xl mb-2">Mobile Apps</h3>
-              <p className="text-ink-soft text-[15px]">
-                Cross-platform React Native development — from prototype to
-                production-ready apps with real-time features.
-              </p>
-            </div>
-            <div className="border-t border-ink/10 pt-6">
-              <h3 className="font-display font-medium text-xl mb-2">APIs & Integrations</h3>
-              <p className="text-ink-soft text-[15px]">
-                Backend services, third-party integrations, and micro-frontend
-                architectures that scale with your team.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <section id="about" className={`${style.section} ${style.about}`} aria-labelledby="about-title"><div><div className={style.label}>About</div><h2 id="about-title">From internet cafes<br />to engineering.</h2><p className={style.aboutLead}>I&apos;ve been hooked on software engineering since 2015, when I was in 9th grade. My first project was a guessing game written in C++ — at an internet cafe, because my family didn&apos;t have a computer.</p><p>I went to a vocational high school to study Software Engineering. Then I applied to ITS for the same major — but my grades sent me to Physics instead. It turned out to be a gift: I learned to think differently, and I never stopped coding.</p><p>Today I&apos;m a software engineer who believes great products come from curiosity and craft.</p></div><aside className={style.notes}><h3>Currently exploring</h3><ul><li>Golang</li><li>Micro Frontend</li><li>System Design</li><li>DevOps</li></ul><h3>Based in</h3><p>South Tangerang, Banten, Indonesia<br />UTC+7</p></aside></section>
 
-      {/* Experiences Section */}
-      <section id="experiences" className="bg-paper-alt py-28 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="overline">01 — Experience</div>
-          <h2 className="section-title">A journey of learning and growth.</h2>
+          <section id="contact" className={style.contact} aria-labelledby="contact-title"><div className={style.label}>Available for selected projects</div><h2 id="contact-title">Let&apos;s build something.</h2><p>Tell me about your project — timeline, goals, and budget. I&apos;ll get back within 24 hours with a clear plan.</p><a className={style.button} href="mailto:mferdiyanzah@gmail.com">mferdiyanzah@gmail.com <span aria-hidden="true">↗</span></a></section>
+        </main>
 
-          <div className="mt-10 max-w-5xl">
-            {/* Dexa Group */}
-            <div className="grid grid-cols-12 gap-4 py-9 border-t border-ink/10">
-              <div className="col-span-12 md:col-span-3 font-display italic text-ink-soft text-[15px]">
-                Feb 2024 — Present
-              </div>
-              <div className="col-span-12 md:col-span-9">
-                <h3 className="font-display font-semibold text-[26px] tracking-tight">
-                  IT Management Trainee
-                </h3>
-                <p className="text-sm font-semibold text-rust mt-0.5 mb-3">
-                  Dexa Group
-                </p>
-                <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Building a web platform that helps the Marketing and
-                    Sales teams win more clients.
-                  </li>
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Working with MySQL and Oracle as the project&apos;s primary
-                    databases.
-                  </li>
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Introduced Micro Frontend architecture to the company for the
-                    first time — cutting deployment time by 60%.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Sinarmas Quantum Engine */}
-            <div className="grid grid-cols-12 gap-4 py-9 border-t border-ink/10">
-              <div className="col-span-12 md:col-span-3 font-display italic text-ink-soft text-[15px]">
-                Mar 2023 — Jan 2024
-              </div>
-              <div className="col-span-12 md:col-span-9">
-                <h3 className="font-display font-semibold text-[26px] tracking-tight">
-                  Junior Frontend Engineer
-                </h3>
-                <p className="text-sm font-semibold text-rust mt-0.5 mb-3">
-                  Sinarmas Quantum Engine
-                </p>
-                <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Built dashboards for HR, business teams, and clients using
-                    React.js and Tailwind CSS.
-                  </li>
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Created a live chat feature with WebSocket, connecting
-                    customers and support in real time.
-                  </li>
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Wrote unit tests covering more than 90% of the codebase.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Danamas */}
-            <div className="grid grid-cols-12 gap-4 py-9 border-t border-b border-ink/10">
-              <div className="col-span-12 md:col-span-3 font-display italic text-ink-soft text-[15px]">
-                Sep 2022 — Feb 2023
-              </div>
-              <div className="col-span-12 md:col-span-9">
-                <h3 className="font-display font-semibold text-[26px] tracking-tight">
-                  Frontend Engineer Internship
-                </h3>
-                <p className="text-sm font-semibold text-rust mt-0.5 mb-3">
-                  Danamas — Pasar Dana Pinjaman
-                </p>
-                <ul className="flex flex-col gap-2 text-[15px] text-ink-soft">
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Built a back-office website that manages loans, customers,
-                    and sales — making operations 40% more efficient.
-                  </li>
-                  <li className="pl-5 relative before:content-['—'] before:absolute before:left-0 before:text-rust">
-                    Migrated a module from a monolith to Micro Frontend
-                    architecture.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Projects />
-
-      {/* About Section */}
-      <section id="about" className="py-28 md:py-32">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-16">
-          <div>
-            <div className="overline">03 — About</div>
-            <h2 className="section-title">From internet cafes to engineering.</h2>
-            <p className="text-[19px] text-ink mt-8 mb-4">
-              I&apos;ve been hooked on software engineering since 2015, when I was
-              in 9th grade. My first project was a guessing game written in C++ —
-              at an internet cafe, because my family didn&apos;t have a computer.
-            </p>
-            <p className="text-ink-soft mb-4">
-              I went to a vocational high school to study Software Engineering.
-              Then I applied to ITS for the same major — but my grades sent me to
-              Physics instead. It turned out to be a gift: I learned to think
-              differently, and I never stopped coding.
-            </p>
-            <p className="text-ink-soft">
-              Today I&apos;m a software engineer who believes great products come
-              from curiosity and craft.
-            </p>
-          </div>
-          <div className="md:border-l border-ink/10 md:pl-8">
-            <h4 className="font-display italic text-rust text-[15px] mb-3">
-              Currently exploring
-            </h4>
-            <ul className="flex flex-wrap gap-2">
-              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
-                Golang
-              </li>
-              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
-                Micro Frontend
-              </li>
-              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
-                System Design
-              </li>
-              <li className="text-[13px] text-ink-soft border border-ink/10 rounded-full px-3 py-1">
-                DevOps
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Availability CTA */}
-      <section className="bg-paper-alt py-20 md:py-24">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="font-display font-medium text-[clamp(28px,4vw,40px)] tracking-tight">
-            Available for freelance projects
-          </h2>
-          <p className="text-ink-soft max-w-[480px] mx-auto mt-4 mb-8">
-            I take on a limited number of projects each quarter to ensure
-            quality. If you need a reliable engineer for your web or mobile
-            build, let&apos;s talk.
-          </p>
-          <a
-            href="mailto:mferdiyanzah@gmail.com"
-            className="text-sm font-medium tracking-[0.06em] uppercase bg-rust text-paper rounded-full px-7 py-3.5 hover:bg-ink transition-all"
-          >
-            Start a Conversation
-          </a>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="bg-ink text-paper text-center py-28 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="overline">04 — Contact</div>
-          <h2 className="section-title text-paper">Let&apos;s build something.</h2>
-          <p className="text-paper/70 max-w-[440px] mx-auto mt-4 mb-10">
-            Tell me about your project — timeline, goals, and budget.
-            I&apos;ll get back within 24 hours with a clear plan.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href="mailto:mferdiyanzah@gmail.com"
-              className="text-sm font-medium border border-paper/30 rounded-full px-6 py-3 hover:bg-rust hover:border-rust transition-all"
-            >
-              ✉ mferdiyanzah@gmail.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mferdiyanzah/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-sm font-medium border border-paper/30 rounded-full px-6 py-3 hover:bg-rust hover:border-rust transition-all"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/mferdiyanzah"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-sm font-medium border border-paper/30 rounded-full px-6 py-3 hover:bg-rust hover:border-rust transition-all"
-            >
-              GitHub
-            </a>
-          </div>
-          <div className="mt-12 text-[13px] text-paper/50">
-            South Tangerang, Banten, Indonesia · UTC+7
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-7 text-center text-[13px] text-ink-soft border-t border-ink/10">
-        © {new Date().getFullYear()} Mohammad Ferdiyanzah. All rights reserved.
-      </footer>
+        <footer className={style.footer}><span>© {new Date().getFullYear()} Mohammad Ferdiyanzah</span><span><a href="https://www.linkedin.com/in/mferdiyanzah/" target="_blank" rel="noreferrer noopener">LinkedIn</a> · <a href="https://github.com/mferdiyanzah" target="_blank" rel="noreferrer noopener">GitHub</a> · Open to freelance</span></footer>
+      </div>
     </div>
   );
 };

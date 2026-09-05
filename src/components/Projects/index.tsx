@@ -3,11 +3,11 @@ import { projectsData } from "../../data/projects";
 
 function Projects() {
   return (
-    <section id="projects" className="py-28 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="overline">02 — Selected Work</div>
-        <h2 className="section-title">Things I&apos;ve built.</h2>
-        <div className="mt-10 border-b border-ink/10">
+    <section id="projects" className="section dark-section" aria-labelledby="projects-title">
+      <div className="container">
+        <div className="label">Selected work</div>
+        <h2 id="projects-title">Real systems.<br />Real constraints.</h2>
+        <div className="project-list">
           {projectsData.map((project, index) => (
             <ProjectCard
               key={index}

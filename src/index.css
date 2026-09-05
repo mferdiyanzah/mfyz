@@ -2,15 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --paper: #faf9f6;
-  --paper-alt: #f3f1ec;
-  --ink: #1c1a17;
-  --ink-soft: #57534b;
-  --line: rgba(28, 26, 23, 0.12);
-  --rust: #c0562f;
-  --rust-soft: rgba(192, 86, 47, 0.08);
-}
+:root { --paper: #e8ff63; --paper-alt: #ff6b9a; --ink: #111; --ink-soft: #383838; --rust: #ff6b9a; --rust-soft: #7ce7ff; }
 
 html {
   scroll-behavior: smooth;
@@ -19,45 +11,23 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Fraunces", serif;
-}
+h1, h2, h3 { font-family: "Space Grotesk", system-ui, sans-serif; }
 
-.overline {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--rust);
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-family: "Fraunces", serif;
-  font-weight: 500;
-  font-size: clamp(34px, 5vw, 48px);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 28s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid var(--rust); outline-offset: 4px; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 36px; }
+.dark-section { background: #111; color: #f5f5ef; margin-inline: calc((1180px - 100vw) / 2); padding-inline: max(36px, calc((100vw - 1108px) / 2)); }
+.dark-section .label, .dark-section .project-number { color: #ff6b9a; }
+.dark-section .project-row { display: grid; grid-template-columns: 75px 1fr 220px; gap: 20px; border-top: 2px solid #f5f5ef; padding: 29px 0; }
+.dark-section .project-row:last-child { border-bottom: 2px solid #f5f5ef; }
+.project-number, .project-tags { font: 11px "DM Mono", monospace; }
+.project-copy h3 { margin: 0; font-size: 29px; line-height: 1; letter-spacing: -.04em; }
+.project-copy p { max-width: 580px; color: #c8c8c0; font-size: 15px; line-height: 1.45; }
+.project-tags { color: #7ce7ff; line-height: 2; text-align: right; }
+.project-tags span { display: block; }
+@media (max-width: 750px) { .container { padding: 0 20px; } .dark-section { margin-inline: -20px; padding-inline: 20px; } .dark-section .project-row { grid-template-columns: 38px 1fr; } .project-tags { grid-column: 2; text-align: left; } }
